@@ -1,9 +1,31 @@
 {
-  "name": "react-native-create-thumbnail",
+  "name": "@react-native-oh-tpl/react-native-create-thumbnail",
   "title": "React Native Create Thumbnail",
-  "version": "2.0.0",
+  "version": "2.0.0-0.0.1",
   "description": "iOS/Android thumbnail generator with support for both local and remote videos",
-  "main": "index.js",
+  "harmony": {
+    "alias": "react-native-create-thumbnail",
+    "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
+  },
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "typings": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "lib",
+    "src",
+    "harmony"
+  ],
+  "scripts": {
+    "bob": "bob build",
+    "prepare": "npm run bob",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/souvik-ghosh/react-native-create-thumbnail.git",
@@ -13,13 +35,39 @@
     "react-native"
   ],
   "author": {
-    "name": "Souvik Ghosh",
-    "email": "emailtosvk@gmail.com"
+    "name": "Yang Yi",
+    "email": "yangyi@apexsoft.com.cn"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
+  "dependencies": {
+    "react-native-create-thumbnail": "2.0.0"
+  },
   "peerDependencies": {
-    "react-native": ">=0.59.0"
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": "0.72.1",
+    "react-native-create-thumbnail": "2.0.0",
+    "react-native-builder-bob": "^0.20.4",
+    "typescript": "^5.4.2"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
   }
 }
